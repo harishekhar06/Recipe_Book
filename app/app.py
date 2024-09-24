@@ -2,8 +2,10 @@ from flask import Flask, request, jsonify
 from models import Recipe
 from database import init_db
 from utils import format_response, handle_error
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 init_db(app)
 
